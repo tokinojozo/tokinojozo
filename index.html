@@ -1,0 +1,533 @@
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+.toki-wrap *, .toki-wrap *::before, .toki-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.toki-wrap {
+  --ink: #1a1814;
+  --ink-mid: #4a4640;
+  --ink-light: #8a8580;
+  --paper: #f7f4ef;
+  --paper-warm: #efe9df;
+  --accent: #2d6a4f;
+  --accent-light: #e8f0ec;
+  --accent-warm: #8b6914;
+  --rule: rgba(26,24,20,0.12);
+  --serif: 'DM Serif Display', 'Shippori Mincho', serif;
+  --sans: 'Noto Sans JP', sans-serif;
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* NAV */
+.toki-wrap .t-nav {
+  padding: 1.25rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid var(--rule);
+  background: var(--paper);
+}
+.toki-wrap .t-nav-brand {
+  font-family: var(--serif);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.toki-wrap .t-nav-cta {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--accent);
+  padding-bottom: 1px;
+}
+
+/* HERO */
+.toki-wrap .t-hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 6rem 3rem 5rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+}
+.toki-wrap .t-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(26,24,20,0.04) 59px, rgba(26,24,20,0.04) 60px);
+  pointer-events: none;
+}
+.toki-wrap .t-hero-kicker {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--ink-light);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.toki-wrap .t-hero-kicker::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 0.5px;
+  background: var(--ink-light);
+}
+.toki-wrap .t-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+.toki-wrap .t-hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.toki-wrap .t-hero-subtitle {
+  font-size: 15px;
+  color: var(--ink-mid);
+  max-width: 480px;
+  line-height: 1.9;
+}
+
+/* SECTIONS */
+.toki-wrap .t-section {
+  padding: 6rem 3rem;
+}
+.toki-wrap .t-section-rule {
+  width: 100%;
+  height: 0.5px;
+  background: var(--rule);
+  margin-bottom: 4rem;
+}
+.toki-wrap .t-section-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--ink-light);
+  margin-bottom: 1rem;
+}
+.toki-wrap .t-section-heading {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.toki-wrap .t-section-body {
+  font-size: 14px;
+  color: var(--ink-mid);
+  max-width: 560px;
+  line-height: 2;
+}
+
+/* PLANS */
+.toki-wrap .t-what-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 4rem;
+}
+.toki-wrap .t-what-item {
+  padding: 3rem;
+  border-top: 0.5px solid var(--rule);
+  border-right: 0.5px solid var(--rule);
+  transition: background 0.3s;
+}
+.toki-wrap .t-what-item:nth-child(2n) { border-right: none; }
+.toki-wrap .t-what-item:hover { background: var(--paper-warm); }
+.toki-wrap .t-what-num {
+  font-family: var(--serif);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.toki-wrap .t-what-title {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.toki-wrap .t-what-body {
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 2;
+  margin-bottom: 1.5rem;
+}
+.toki-wrap .t-what-meta {
+  font-size: 11px;
+  color: var(--ink-light);
+  border-top: 0.5px solid var(--rule);
+  padding-top: 1rem;
+  line-height: 1.8;
+}
+.toki-wrap .t-what-price {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--accent-warm);
+  margin-top: 0.5rem;
+}
+
+/* TECHNOLOGY */
+.toki-wrap .t-tech {
+  background: var(--ink);
+  color: var(--paper);
+}
+.toki-wrap .t-tech .t-section-label { color: rgba(247,244,239,0.4); }
+.toki-wrap .t-tech .t-section-heading { color: var(--paper); }
+.toki-wrap .t-tech .t-section-body { color: rgba(247,244,239,0.65); }
+.toki-wrap .t-tech-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 4rem;
+  border: 0.5px solid rgba(247,244,239,0.12);
+}
+.toki-wrap .t-tech-step {
+  padding: 2.5rem 2rem;
+  border-right: 0.5px solid rgba(247,244,239,0.12);
+}
+.toki-wrap .t-tech-step:last-child { border-right: none; }
+.toki-wrap .t-tech-step-num {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  color: rgba(247,244,239,0.1);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.toki-wrap .t-tech-step-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--paper);
+  margin-bottom: 0.75rem;
+}
+.toki-wrap .t-tech-step-body {
+  font-size: 12px;
+  color: rgba(247,244,239,0.5);
+  line-height: 1.9;
+}
+.toki-wrap .t-tech-badge {
+  display: inline-block;
+  margin-top: 3rem;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: rgba(247,244,239,0.4);
+  border: 0.5px solid rgba(247,244,239,0.2);
+  padding: 6px 16px;
+}
+
+/* WORKS */
+.toki-wrap .t-works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 4rem;
+}
+.toki-wrap .t-work-item {
+  background: var(--paper-warm);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.toki-wrap .t-work-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.toki-wrap .t-work-item:hover::before { transform: scaleX(1); }
+.toki-wrap .t-work-item:hover { background: var(--accent-light); }
+.toki-wrap .t-work-year {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--ink-light);
+  margin-bottom: 0.75rem;
+}
+.toki-wrap .t-work-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+}
+.toki-wrap .t-work-body {
+  font-size: 12px;
+  color: var(--ink-mid);
+  line-height: 1.9;
+}
+.toki-wrap .t-work-tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  border: 0.5px solid var(--accent);
+  padding: 3px 10px;
+}
+
+/* CTA */
+.toki-wrap .t-cta {
+  background: var(--paper-warm);
+  text-align: center;
+  padding: 8rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.toki-wrap .t-cta-bg {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(26,24,20,0.04) 39px, rgba(26,24,20,0.04) 40px);
+  pointer-events: none;
+}
+.toki-wrap .t-cta-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--ink-light);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.toki-wrap .t-cta-heading {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.toki-wrap .t-cta-body {
+  font-size: 14px;
+  color: var(--ink-mid);
+  max-width: 440px;
+  margin: 0 auto 3rem;
+  line-height: 2;
+  position: relative;
+}
+.toki-wrap .t-cta-btn {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: #f7f4ef;
+  background: var(--ink);
+  padding: 1.1rem 3rem;
+  text-decoration: none;
+  position: relative;
+  transition: background 0.3s;
+}
+.toki-wrap .t-cta-btn:hover { background: var(--accent); color: #f7f4ef; }
+.toki-wrap .t-cta-note {
+  margin-top: 1.5rem;
+  font-size: 11px;
+  color: var(--ink-light);
+  position: relative;
+}
+
+/* ANIMATIONS */
+.toki-wrap .t-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.toki-wrap .t-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .toki-wrap .t-nav { padding: 1rem 1.5rem; }
+  .toki-wrap .t-hero { padding: 5rem 1.5rem 4rem; }
+  .toki-wrap .t-section { padding: 4rem 1.5rem; }
+  .toki-wrap .t-what-grid { grid-template-columns: 1fr; }
+  .toki-wrap .t-what-item { border-right: none; }
+  .toki-wrap .t-tech-flow { grid-template-columns: 1fr 1fr; }
+  .toki-wrap .t-works-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="toki-wrap">
+
+  <!-- NAV -->
+  <div class="t-nav">
+    <span class="t-nav-brand">時の醸造所</span>
+    <a href="#t-contact" class="t-nav-cta">お問い合わせ</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="t-hero">
+    <div class="t-hero-bg"></div>
+    <p class="t-hero-kicker">SERVICES</p>
+    <h2 class="t-hero-title">
+      味わいを、<br>
+      <em>時間で</em><br>
+      設計する。
+    </h2>
+    <p class="t-hero-subtitle">
+      食品ブランドの商品開発・体験設計を、<br>独自手法「フレーバースケープ®」で支援します。<br>
+      味覚・音・コンセプトをワンストップで。
+    </p>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="t-section" id="t-services">
+    <div class="t-section-rule"></div>
+    <p class="t-section-label t-reveal">WHAT WE DO</p>
+    <h2 class="t-section-heading t-reveal">3つのサービス</h2>
+    <p class="t-section-body t-reveal">
+      フレーバースケープ®を軸に、ブランド開発から商品設計、体験空間のプロデュースまで、食の領域を一貫してお手伝いします。
+    </p>
+    <div class="t-what-grid">
+      <div class="t-what-item t-reveal">
+        <p class="t-what-num">Plan A</p>
+        <p class="t-what-title">ブランド開発パッケージ</p>
+        <p class="t-what-body">商品コンセプトの設計から、レシピ・味覚設計、ブランドサウンド制作まで一貫して担当。「売れる食品」には、設計された体験があります。</p>
+        <div class="t-what-meta">
+          対象：食品メーカー・地方企業・小規模事業者<br>
+          実績：HARASHIMO BASE「アレルギーフリーキャラメルCHOU」県産品コンクール優秀賞
+          <p class="t-what-price">80〜150万円〜</p>
+        </div>
+      </div>
+      <div class="t-what-item t-reveal">
+        <p class="t-what-num">Plan B</p>
+        <p class="t-what-title">体験設計・イベントプロデュース</p>
+        <p class="t-what-body">フレーバースケープ®を活用した体験空間・イベントの設計。味覚と音楽を融合させた、記憶に残る食体験をプロデュースします。</p>
+        <div class="t-what-meta">
+          対象：大手ブランド・商業施設・行政・自治体<br>
+          実績：渋谷スクランブルスクエア「GO GREEN」／渋谷sakura stageオープニング
+          <p class="t-what-price">100〜200万円〜</p>
+        </div>
+      </div>
+      <div class="t-what-item t-reveal">
+        <p class="t-what-num">Plan C</p>
+        <p class="t-what-title">新商品開発受託</p>
+        <p class="t-what-body">市場・味覚分析から、コンセプト設計・試作、ブランディングまで一体型で開発。独自の分析手法で、他にない商品を生み出します。</p>
+        <div class="t-what-meta">
+          対象：食品メーカー・大手ブランド<br>
+          実績：大阪万博出店商品開発（日本茶×日本酒3種）
+          <p class="t-what-price">100〜200万円〜</p>
+        </div>
+      </div>
+      <div class="t-what-item t-reveal" style="background: var(--accent-light);">
+        <p class="t-what-num" style="color: var(--accent);">名刺</p>
+        <p class="t-what-title">TEA'SIC</p>
+        <p class="t-what-body">音楽付き日本茶ブランド。フレーバースケープ®の世界観を体験できるプロダクトです。まずはここから、時の醸造所の世界観に触れてください。</p>
+        <div class="t-what-meta">
+          味覚と音楽が融合した、新しい日本茶体験。<br>渋谷sakura stage、各種イベントにて展開中。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECHNOLOGY -->
+  <div class="t-section t-tech" id="t-technology">
+    <p class="t-section-label t-reveal">OUR TECHNOLOGY</p>
+    <h2 class="t-section-heading t-reveal">フレーバースケープ®とは</h2>
+    <p class="t-section-body t-reveal">
+      味の変化を「時間軸」で分析・記録する、時の醸造所独自の手法です。口に含んだ瞬間から余韻まで、食の体験を楽譜のように可視化します。
+    </p>
+    <span class="t-tech-badge t-reveal">特許出願中 / 総務省「異能vation2021」上位25ノミネート</span>
+    <div class="t-tech-flow">
+      <div class="t-tech-step t-reveal">
+        <p class="t-tech-step-num">01</p>
+        <p class="t-tech-step-title">味覚の時間分析</p>
+        <p class="t-tech-step-body">食品の味わいを時間軸で計測・記録。口に含んだ瞬間から余韻まで変化を捉えます。</p>
+      </div>
+      <div class="t-tech-step t-reveal">
+        <p class="t-tech-step-num">02</p>
+        <p class="t-tech-step-title">構造の可視化</p>
+        <p class="t-tech-step-body">分析データを楽譜のような形式で可視化。誰もが理解できる「味の設計図」に変換します。</p>
+      </div>
+      <div class="t-tech-step t-reveal">
+        <p class="t-tech-step-num">03</p>
+        <p class="t-tech-step-title">音楽的表現へ翻訳</p>
+        <p class="t-tech-step-body">味わいの時間構造を音楽へと翻訳。味覚と聴覚の両面からブランド体験を設計します。</p>
+      </div>
+      <div class="t-tech-step t-reveal">
+        <p class="t-tech-step-num">04</p>
+        <p class="t-tech-step-title">商品・体験へ応用</p>
+        <p class="t-tech-step-body">分析結果を商品開発・ブランディング・イベント設計に活用。再現性ある体験設計を実現します。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKS -->
+  <div class="t-section" id="t-works">
+    <div class="t-section-rule"></div>
+    <p class="t-section-label t-reveal">WORKS</p>
+    <h2 class="t-section-heading t-reveal">主な実績</h2>
+    <div class="t-works-grid">
+      <div class="t-work-item t-reveal">
+        <p class="t-work-year">2024</p>
+        <p class="t-work-title">渋谷スクランブルスクエア「GO GREEN」お茶イベント</p>
+        <p class="t-work-body">都市型お茶イベントのプロデュース。フレーバースケープ®を活用した体験設計を担当。</p>
+        <span class="t-work-tag">体験設計</span>
+      </div>
+      <div class="t-work-item t-reveal">
+        <p class="t-work-year">2024</p>
+        <p class="t-work-title">渋谷sakura stageオープニング TEA'SIC採用</p>
+        <p class="t-work-body">大規模商業施設のオープニングイベントにTEA'SICが採用。ブランド体験を提供。</p>
+        <span class="t-work-tag">ブランド体験</span>
+      </div>
+      <div class="t-work-item t-reveal">
+        <p class="t-work-year">2023</p>
+        <p class="t-work-title">HARASHIMO BASE アレルギーフリーキャラメルCHOU</p>
+        <p class="t-work-body">コンセプト設計からレシピ開発、BGM制作まで一貫担当。県産品コンクール優秀賞受賞。</p>
+        <span class="t-work-tag">商品開発</span>
+      </div>
+      <div class="t-work-item t-reveal">
+        <p class="t-work-year">2022</p>
+        <p class="t-work-title">大阪万博 出店商品開発受託</p>
+        <p class="t-work-body">日本茶を使用した日本酒3種を開発。万博という世界的な舞台に向けた商品設計を担当。</p>
+        <span class="t-work-tag">商品開発</span>
+      </div>
+      <div class="t-work-item t-reveal">
+        <p class="t-work-year">2021</p>
+        <p class="t-work-title">総務省「異能vation2021」上位25ノミネート</p>
+        <p class="t-work-body">味の分析手法が全国から選ばれ上位25にノミネート。技術の独自性が認められる。</p>
+        <span class="t-work-tag">技術認定</span>
+      </div>
+      <div class="t-work-item t-reveal">
+        <p class="t-work-year">2018</p>
+        <p class="t-work-title">東京オリンピック出場セーリング女子チーム ansenaフードサポート</p>
+        <p class="t-work-body">トップアスリートのパフォーマンスを支える食のサポートを担当。</p>
+        <span class="t-work-tag">フードサポート</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="t-cta" id="t-contact">
+    <div class="t-cta-bg"></div>
+    <p class="t-cta-label t-reveal">CONTACT</p>
+    <h2 class="t-cta-heading t-reveal">まず、話しましょう。</h2>
+    <p class="t-cta-body t-reveal">
+      商品開発・ブランディング・イベント設計など、食の領域でのご相談はお気軽にどうぞ。内容をお聞きした上で、最適なご提案をいたします。
+    </p>
+    <a href="mailto:tokinojozo@gmail.com" class="t-cta-btn t-reveal">お問い合わせはこちら</a>
+    <p class="t-cta-note t-reveal">通常3営業日以内にご返信いたします</p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        setTimeout(function(){ entry.target.classList.add('visible'); }, 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.t-reveal').forEach(function(el){ observer.observe(el); });
+})();
+</script>
